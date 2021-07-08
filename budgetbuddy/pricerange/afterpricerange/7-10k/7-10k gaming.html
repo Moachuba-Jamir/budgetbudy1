@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.0/css/all.min.css"
+        integrity="sha512-gRH0EcIcYBFkQTnbpO8k0WlsD20x5VzjhOA1Og8+ZUAhcMUCvd+APD35FJw3GzHAP3e+mP28YcDJxVr745loHw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="utf-8">
+    <title>7-10k range gaming </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+
+    <!-- Demo styles -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Spectral+SC:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap');
+
+        html,
+        body {
+            position: relative;
+            height: 100%;
+
+        }
+
+        body {
+            background-image: linear-gradient(109.5deg, rgb(194, 194, 193) 11.2%, rgb(226, 160, 94) 100.2%);
+
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper-container {
+            width: 300px;
+
+            height: 500px;
+            position: absolute;
+            left: 50%;
+            top: 37%;
+            margin-left: -150px;
+            margin-top: -150px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: contain;
+            background-repeat: repeat-x;
+            border-radius: 10px;
+
+        }
+
+        p {
+            text-align: center;
+            font-family: 'Spectral SC', serif;
+            color: beige;
+        }
+
+        h2 {
+            font-family: 'Spectral SC', serif;
+        }
+
+        .specs {
+            font-family: fantasy;
+            text-align: center;
+            font-size: 18px;
+            margin-top: -5%;
+        }
+
+
+
+        li {
+            margin-bottom: 20px;
+            text-align: justify;
+            color: beige;
+        }
+
+
+        .white {
+            color: white;
+        }
+
+        .gohome {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 3%;
+        }
+
+        .fa-home {
+            font-size: 18px;
+            color: black;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+
+        }
+
+
+        .awhite {
+            color: beige;
+        }
+
+        /*progress animation here */
+        .progress-bar {
+            background-color: white;
+            height: 100%;
+            width: 100%;
+            display: block;
+            position: fixed;
+            z-index: 200;
+            opacity: 0.95;
+
+
+        }
+
+        #loader {
+            width: 60%;
+            height: 30%;
+            position: fixed;
+            top: 23%;
+            left: 21%;
+            border-radius: 130px;
+        }
+
+        .loading {
+            color: black;
+            display: block;
+            position: fixed;
+            top: 53%;
+            left: 30%;
+            font-family: cursive;
+        }
+
+        #increase {
+            border: none;
+            height: 20px;
+            width: 30px;
+            border-radius: 7px;
+        }
+
+        #decrease {
+            border: none;
+            height: 20px;
+            width: 30px;
+            border-radius: 7px;
+        }
+
+        .fa-play {
+            transform: rotate(180deg);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .info-container {
+            padding-top: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .information {
+            font-family: 'Concert One', cursive;
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+            border-radius: 20px;
+            background-image: radial-gradient(circle farthest-corner at -8.9% 51.2%, rgb(0, 0, 0) 0%, rgba(255, 124, 0, 1) 15.9%, rgba(255, 163, 77, 1) 15.9%, rgba(255, 163, 77, 1) 24.4%, rgba(19, 30, 37, 1) 24.5%, rgba(19, 30, 37, 1) 66%);
+
+        }
+
+        legend {
+            font-family: 'Concert One', cursive;
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: whitesmoke;
+            padding-bottom: 5px;
+        }
+
+
+        legend p {
+            font-family: fantasy;
+        }
+
+        .buynow {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        #buy {
+            background-image: radial-gradient(circle farthest-corner at -8.9% 51.2%, rgba(255, 124, 0, 1) 0%, rgba(255, 124, 0, 1) 15.9%, rgba(255, 163, 77, 1) 15.9%, rgba(255, 163, 77, 1) 24.4%, rgba(19, 30, 37, 1) 24.5%, rgba(19, 30, 37, 1) 66%);
+            color: beige;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            height: 30px;
+            width: 80px;
+            border-radius: 10px;
+            transition: all .4s ease;
+        }
+
+        #buy:hover {
+            height: 40px;
+            width: 120px;
+        }
+
+        a {
+            color: beige;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Swiper -->
+    <div class="progress-bar">
+        <p class=loading> Budget buddy Loading...</p>
+        <img id="loader" src="../../../loading.gif">
+
+    </div>
+
+    <div class="gohome">
+        <!-- ../ is to come out of the current directory we are in -->
+        <a href="../../../index.html">
+            &nbsp; <i class="fas fa-home"></i><br>
+            Home
+
+        </a>
+
+    </div>
+    <h2>Game more pay less! </h2>
+    <p>under ₹7k - ₹10k</p>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+
+
+            <!--normal use-->
+            <div class="swiper-slide" style="background-image:url(../pocom2reloaded/real\ fourth.jpg)">
+
+
+
+
+
+
+
+            </div>
+
+            <!--best camera section -->
+            <div class="swiper-slide" style="background-image:url(../pocom2reloaded/second\ poco\ real\ m2.jpg)">
+
+
+
+            </div>
+            <!--gaming phone section -->
+            <div class="swiper-slide" style="background-image:url(../pocom2reloaded/real\ thrid.jpg)">
+            </div>
+
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+
+        <div class="buynow">
+            <h4>Price :₹9500 </h4>
+            <button id="buy"><a href="https://imjo.in/6t5ncS">Buy Now</a></button>
+        </div>
+
+        <div class="info-container">
+
+
+
+
+
+            <fieldset data-aos="fade-up">
+                <legend data-aos="fade-right"> summary</legend>
+                <p class="specs" data-aos="fade-left">"Poco M2 reloaded" is the best phone for gaming if your budget is less than 
+10k, with its Mediatek helio G80 (12nm) chipset you can play demanding games like PUBG at low to medium settings
+more discussed below ...
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend data-aos="fade-right">Hardware </legend>
+                
+                <li class="specs" data-aos="fade-left">Processor: Mediatek Helio G80 (12nm)</li>
+                <br>
+                <li class="specs" data-aos="fade-left">Octa-core (2x2.0 GHz Cortex-A75 & 6x1.8 GHz Cortex-A55)</li>
+                <br>
+                <li class="specs" data-aos="fade-left">GPU:Mali-G52 MC2</li>
+                <br>
+                
+                <li class="specs" data-aos="fade-left">Ram: 4GB </li>
+                <br>
+
+                <li class="specs" data-aos="fade-left">Internal storage: 64GB </li>
+                <br>
+
+                <li class="specs" data-aos="fade-left">storage: expandable upto 512 GB</li>
+
+
+
+            </fieldset data-aos="fade-up">
+            <fieldset data-aos="fade-right">
+                <legend data-aos="fade-right">camera </legend>
+                <li class="specs" data-aos="fade-left">Front camera: 8MP </li>
+                <br>
+                <li class="specs" data-aos="fade-left"> no of rear cameras: 4</li>
+                <br>
+                <li class="specs" data-aos="fade-left">13 MP main camera (f/2.2, 28mm (wide), 1/3.1", 1.12µm, PDAF)
+                </li>
+                <br>
+                <li class="specs" data-aos="fade-left">8 MP, f/2.2, 118˚ (ultrawide), 1/4.0", 1.12µm</li>
+
+                <br>
+                <li class="specs" data-aos="fade-left">5 MP, f/2.4, (macro)</li>
+
+
+                <br>
+
+
+                <li class="specs" data-aos="fade-left">2 MP, f/2.4, (depth) {LED Flash / HDR / Panaroma)</li>
+
+            </fieldset>
+            <fieldset data-aos="fade-up">
+                <legend data-aos="fade-right">Display</legend>
+                <li class="specs" data-aos="fade-left">screen- Size: 6.53 inches (IPS LCD) </li>
+                <li class="specs" data-aos="fade-left">protection: Gorilla glass </li>
+            
+            
+            </fieldset>
+
+            <fieldset data-aos="fade-up">
+                <legend data-aos="fade-right">General specs</legend>
+                <li class="specs" data-aos="fade-left">Brand: Poco </li>
+                <li class="specs" data-aos="fade-left">launched: India </li>
+                <li class="specs" data-aos="fade-left">Battery: 5000mah </li>
+                <li class="specs" data-aos="fade-left">Released: April 21st 2021</li>
+                <li class="specs" data-aos="fade-left">Android: Android 10 MIUI 12 </li>
+
+            </fieldset>
+         
+            <fieldset data-aos="fade-up">
+                <legend data-aos="fade-right">Connectivity</legend>
+                <li class="specs" data-aos="fade-left"> wifi : Yes </li>
+                <li class="specs" data-aos="fade-left"> Bluetooth : Yes </li>
+                <li class="specs" data-aos="fade-left"> USB type C : Yes </li>
+                <li class="specs"> Headphone jack : Yes </li>
+                <li class="specs"> No of sims : 2 (4g both) </li>
+
+            </fieldset>
+
+
+
+
+
+
+
+
+        </div>
+
+
+        <!-- Swiper JS -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+
+
+            var swiper = new Swiper('.swiper-container', {
+                effect: 'cube',
+                grabCursor: true,
+                cubeEffect: {
+                    shadow: true,
+                    slideShadows: true,
+                    shadowOffset: 20,
+                    shadowScale: 0.94,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+            });
+            window.onload = function () {
+                document.querySelector('#loader').style.display = 'none';
+                document.querySelector('.progress-bar').style.display = 'none';
+            }
+
+        </script>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000
+            });
+        </script>
+
+
+</body>
+
+</html>

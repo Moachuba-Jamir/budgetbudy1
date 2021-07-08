@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.0/css/all.min.css"
+        integrity="sha512-gRH0EcIcYBFkQTnbpO8k0WlsD20x5VzjhOA1Og8+ZUAhcMUCvd+APD35FJw3GzHAP3e+mP28YcDJxVr745loHw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="utf-8">
+    <title>13-15k range </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+
+    <!-- Demo styles -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Spectral+SC:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap');
+
+        html,
+        body {
+            position: relative;
+            height: 100%;
+
+        }
+
+        body {
+            background-image: linear-gradient(109.5deg, rgb(232, 244, 250) 11.2%, rgb(226, 160, 94) 100.2%);
+
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper-container {
+            width: 300px;
+
+            height: 500px;
+            position: absolute;
+            left: 50%;
+            top: 30%;
+            margin-left: -150px;
+            margin-top: -150px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            border-radius: 10px;
+
+        }
+
+        h2 {
+            font-family: 'Spectral SC', serif;
+        }
+
+        P {
+            font-family: 'Concert One', cursive;
+            text-align: center;
+            font-size: 18px;
+            margin-top: -5%;
+        }
+
+
+
+        .show1 {
+            background-image: linear-gradient(to right, #D31027 0%, #EA384D 51%, #D31027 100%)
+        }
+
+        .show1 {
+            margin: 10px;
+            padding: 10px 25px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            position: absolute;
+            top: 81%;
+            left: 26%;
+        }
+
+        .show1:hover {
+            background-position: right center;
+            /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+        }
+
+
+        .show {
+            background-image: linear-gradient(to right, #024b28 0%, #050000 51%, #16222A 100%)
+        }
+
+        .show {
+
+            margin: 10px;
+            padding: 10px 25px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            position: absolute;
+            top: 83%;
+            left: 26%;
+        }
+
+        .show:hover {
+            background-position: right center;
+            /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .show2 {
+            background-image: linear-gradient(to right, #2980b9 0%, #2c3e50 51%, #2980b9 100%)
+        }
+
+        .show2 {
+            margin: 10px;
+            padding: 10px 25px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            position: absolute;
+            top: 81%;
+            left: 26%;
+        }
+
+        .show2:hover {
+            background-position: right center;
+            /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .show3 {
+            background-image: linear-gradient(to right, #F3904F 0%, #141414 51%, #F3904F 100%)
+        }
+
+        .show3 {
+            margin: 10px;
+            padding: 10px 25px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            position: absolute;
+            top: 81%;
+            left: 26%;
+        }
+
+        .show3:hover {
+            background-position: right center;
+            /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+        }
+
+
+
+
+
+
+
+
+        .info-container {
+            padding-top: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .next {
+            font-family: 'Kirang Haerang', cursive;
+            font-size: 15.1px;
+        }
+
+        .information {
+            font-family: 'Concert One', cursive;
+        }
+
+        .white {
+            color: white;
+        }
+
+        .gohome {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 3%;
+        }
+
+        .fa-home {
+            font-size: 18px;
+            color: black;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+
+        }
+
+
+        .show4 {
+            background-image: linear-gradient(to right, #141E30 0%, #243B55 51%, #141E30 100%)
+        }
+
+        .show4 {
+            margin: 10px;
+            padding: 10px 25px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            position: absolute;
+            top: 85%;
+            left: 29%;
+        }
+
+        .show4:hover {
+            background-position: right center;
+            /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .awhite {
+            color: beige;
+        }
+
+        /*progress animation here */
+         .progress-bar {
+            background-color: rgb(0, 0, 0);
+            height: 100%;
+            width: 100%;
+            display: block;
+            position: fixed;
+            z-index: 200;
+            opacity: 0.65;
+
+
+        }
+
+        #loader {
+            width: 60%;
+            height: 25%;
+            position: fixed;
+            top: 30%;
+            left: 21%;
+    
+        }
+
+        .loading {
+            color: black;
+            display: block;
+            position: fixed;
+            top: 53%;
+            left: 30%;
+            font-family: cursive;
+        }
+
+        #increase {
+            border: none;
+            height: 20px;
+            width: 30px;
+            border-radius: 7px;
+        }
+
+        #decrease {
+            border: none;
+            height: 20px;
+            width: 30px;
+            border-radius: 7px;
+        }
+
+        .fa-play {
+            transform: rotate(180deg);
+        }
+
+        button {}
+    </style>
+</head>
+
+<body>
+    <!-- Swiper -->
+    <div class="progress-bar">
+        <p class=loading> Budget buddy Loading...</p>
+        <img id="loader" src="../loading.gif">
+
+    </div>
+
+    <div class="gohome">
+        <!-- ../ is to come out of the current directory we are in -->
+        <a href="../index.html">
+            &nbsp; <i class="fas fa-home"></i><br>
+            Home
+
+        </a>
+
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+
+            <!--normal use-->
+            <div class="swiper-slide" style="background-image:url(aftersearch/battery.webp)">
+                <h2>Normal use...</h2>
+                <p>under ₹13-15k</p>
+
+                <button class="show">
+                    <a class="awhite" href="afterpricerange/7-10k/7-10k normal.html">show me</a>
+                </button>
+
+
+
+
+
+            </div>
+
+            <!--best camera section -->
+            <div class="swiper-slide" style="background-image:url(aftersearch/best\ camera.webp)">
+                <h2>Best camera...</h2>
+                <p>under ₹13-15k</p>
+
+                <button class="show1">
+                    <a class="awhite" href="afterpricerange/7-10k/7-10k camera.html">show me</a>
+                </button>
+
+            </div>
+            <!--gaming phone section -->
+            <div class="swiper-slide" style="background-image:url(aftersearch/gaming.webp)">
+                <h2 class="white">Gaming phone...</h2>
+                <p class="white">under ₹13-15k</p>
+                <button class="show2">
+                    <a class="awhite" href="afterpricerange/7-10k/7-10k gaming.html">show me</a>
+                </button>
+
+            </div>
+
+
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <div class="info-container">
+            <div class="information">
+
+                Swipe left
+
+            </div>
+
+            <div class="next">
+                <button id="decrease" onclick="decrease()"><i class="fas fa-caret-left fa-lg"></i></button> INCREASE /
+                DECREASE your price range
+                <button id="increase" onclick="increase()"><i class="fas fa-caret-right fa-lg"></i></button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+
+        function decrease() {
+            window.open('10-13k.html', '_self');
+        }
+
+        function increase() {
+            window.open('15-17k.html', '_self');
+        }
+
+
+        var swiper = new Swiper('.swiper-container', {
+            effect: 'cube',
+            grabCursor: true,
+            cubeEffect: {
+                shadow: true,
+                slideShadows: true,
+                shadowOffset: 20,
+                shadowScale: 0.94,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
+        window.onload = function () {
+            document.querySelector('#loader').style.display = 'none';
+            document.querySelector('.progress-bar').style.display = 'none';
+        }
+
+    </script>
+
+
+</body>
+
+</html>
